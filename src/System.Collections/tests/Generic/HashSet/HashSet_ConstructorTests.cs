@@ -281,5 +281,28 @@ namespace Tests
         }
 
         #endregion
+
+        #region Constructor_Capacity
+
+        //Test 1: Set capacity
+        [Fact]
+        public static void HashSetConstructor_SetCapacity()
+        {
+            HashSet<int> hashSet = new HashSet<int>(13);
+            int[] items = new int[0];
+            HashSetTestSupport<int> driver = new HashSetTestSupport<int>(hashSet, s_intGenerator, items);
+            driver.VerifyHashSetTests();
+        }
+
+        [Fact]
+        public static void HashSetConstructor_SetCapacity_Negative()
+        {
+            HashSet<int> hashSet = new HashSet<int>(13);
+            int[] items = new int[0];
+            HashSetTestSupport<int> driver = new HashSetTestSupport<int>(hashSet, s_intGenerator, items);
+            driver.VerifyHashSet_NegativeTests();
+        }
+
+        #endregion
     }
 }
